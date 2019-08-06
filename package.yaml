@@ -1,0 +1,28 @@
+name:                cd-blog
+version:             0.1.0.0
+github:              "cdornan/cd-blog"
+license:             OtherLicense
+author:              "Chris Dornan"
+maintainer:          "chris.dornan@chrisdornan.com"
+copyright:           "2013-2019 IRIS Connect"
+
+synopsis:            chrisdornan.com blog
+category:            Network
+
+description:         chrisdornan.com Hakyll blog
+
+dependencies:
+- base == 4.*
+- hakyll
+- data-default
+
+ghc-options:
+- -Wall
+- -fwarn-tabs
+
+executables:
+   cd-blog:
+    main: site.hs
+    ghc-options:
+    - -threaded
+    dependencies: []

@@ -1,12 +1,13 @@
 --------------------------------------------------------------------------------
 {-# LANGUAGE OverloadedStrings #-}
+import           Data.Default
 import           Data.Monoid (mappend)
 import           Hakyll
 
 
 --------------------------------------------------------------------------------
 main :: IO ()
-main = hakyll $ do
+main = hakyllWith cfg $ do
     match "images/*" $ do
         route   idRoute
         compile copyFileCompiler
@@ -63,5 +64,13 @@ main = hakyll $ do
 --------------------------------------------------------------------------------
 postCtx :: Context String
 postCtx =
-    dateField "date" "%B %e, %Y" `mappend`
-    defaultContext
+    dateField "date" "%F"
+      <> defaultContext
+
+
+--------------------------------------------------------------------------------
+cfg :: Configuration
+cfg = def
+  { previewHost = "0.0.0.0"
+  , previewPort = 8000
+  }

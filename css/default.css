@@ -1,3 +1,16 @@
+div.post-list-row {
+  height: 2ex;
+  clear: both;
+}
+
+div.post-list-title {
+  float: left;
+}
+
+div.post-list-date {
+  float: right;
+}
+
 html {
   font-size: 62.5%;
 }

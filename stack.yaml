@@ -1,0 +1,11 @@
+resolver: lts-13.30
+
+packages:
+- .
+
+extra-deps:
+- pandoc-2.7
+- pandoc-citeproc-0.16.2
+- ipynb-0.1
+- hakyll-4.12.5.2
+- lrucache-1.2.0.1
