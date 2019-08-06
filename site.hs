@@ -60,12 +60,41 @@ main = hakyllWith cfg $ do
 
     match "templates/*" $ compile templateBodyCompiler
 
+    create ["atom.xml"] $ do
+        route idRoute
+        compile $ do
+            let feedCtx = postCtx `mappend`
+                    constField "description" "This is the post description"
+
+            posts <- fmap (take 10) . recentFirst =<< loadAll "posts/*"
+            renderAtom feedConfig feedCtx posts
+
+    create ["rss.xml"] $ do
+        route idRoute
+        compile $ do
+            let feedCtx = postCtx `mappend`
+                    constField "description" "This is the post description"
+
+            posts <- fmap (take 10) . recentFirst =<< loadAll "posts/*"
+            renderRss feedConfig feedCtx posts
+
+feedConfig :: FeedConfiguration
+feedConfig =
+  FeedConfiguration
+    { feedTitle       = "chrisdornan.com"
+    , feedDescription = "Chris Dornan's blog"
+    , feedAuthorName  = "Chris Dornan"
+    , feedAuthorEmail = "chris@chrisdornan.com"
+    , feedRoot        = "http://chrisdornan.com"
+    }
+
 
 --------------------------------------------------------------------------------
 postCtx :: Context String
-postCtx =
-    dateField "date" "%F"
-      <> defaultContext
+postCtx = mconcat
+    [ dateField "date" "%F"
+    , defaultContext
+    ]
 
 
 --------------------------------------------------------------------------------
