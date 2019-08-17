@@ -108,6 +108,25 @@ mus. Suspendisse hendrerit nisl eu felis sagittis faucibus. Nunc eu congue
 lorem. Quisque non nibh nisi, et ultrices massa. Sed vitae erat vitae nulla
 pellentesque fermentum.
 
+```haskell
+newtype GenericEncode a = GenericEncode { unGenericEncode :: a }
+
+instance (Generic a, Encode (Rep a p)) => Encode (GenericEncode a) where
+  encode = (encode @(Rep a p)) . from . unGenericEncode
+
+instance (Encode (f p)) => Encode (M1 D x f p) where
+  encode (M1 x) = encode @(f p) x
+
+instance (Encode (f p)) => Encode (M1 C x f p) where
+  encode (M1 x) = encode @(f p) x
+
+instance (Encode (a p), Encode (b p)) => Encode ((a :*: b) p) where
+  encode (a :*: b) = (encode @(a p) a) <> ", " <> (encode @(b p) b)
+
+instance (Encode t, Selector s) => Encode (M1 S s (K1 R t) p) where
+  encode m@(M1 (K1 x)) = Text.pack (selName m) <> " = " <> encode x
+```
+
 Ut diam nunc, consectetur ut ultrices eu, iaculis sed felis. Sed lacinia, odio
 et accumsan luctus, arcu ipsum accumsan erat, sit amet malesuada libero lacus et
 velit. Donec accumsan tristique tristique. Proin a metus magna, vitae mattis

@@ -1,0 +1,15 @@
+date,slug,title
+2019-08-10,supid,The Stupid Haskeller
+2019-08-10,winning,Why Haskell is Winning
+2019-08-10,breaking,Breaking Haskell
+2019-08-10,reading,Reading in RIO
+2019-08-10,utf8,UTF-8
+2019-08-10,stringing,Stringing Along
+2019-08-10,fmt,Fabulous fmt
+2019-08-10,fmt-in-rio,Formatting in RIO
+2019-08-10,buildable,A New Buildable Package
+2019-08-10,columnar,Lining up  with columnar
+2019-08-10,optparse,Enumerating Commandline Options with opptparse-enum
+2019-08-10,regex,Regex Revised
+2019-08-10,dates,Beautiful Dates
+2019-08-10,pvp,PVP Done Right
