@@ -4,10 +4,18 @@ module Main(main) where
 
 import           Data.Default
 import           Hakyll
+import           Hakyll.Web.Sass
 
 
 main :: IO ()
 main = hakyllWith cfg $ do
+    -- compile SASS/CSS
+    depends <- makePatternDependency "assets/scss/**.scss"
+    rulesExtraDependencies [depends] $ do
+        match (fromRegex "^assets/scss/[^_].*.scss") $ do
+            route $ setExtension "css"
+            compile $ sassCompilerWith sass_options
+
     match "assets/images/*" $ do
         route   idRoute
         compile copyFileCompiler
@@ -87,6 +95,15 @@ feedConfig =
     , feedAuthorEmail = "chris@chrisdornan.com"
     , feedRoot        = "http://chrisdornan.com"
     }
+
+
+--------------------------------------------------------------------------------
+sass_options :: SassOptions
+sass_options = defaultSassOptions
+      { sassSourceMapEmbed = True
+      , sassOutputStyle    = SassStyleCompressed
+      , sassIncludePaths   = Just ["."]
+      }
 
 
 --------------------------------------------------------------------------------

@@ -11,4 +11,6 @@ extra-deps:
 - pandoc-citeproc-0.16.2
 - ipynb-0.1
 - hakyll-4.12.5.2
+- hakyll-images-0.4.4
+- hakyll-sass-0.2.4
 - lrucache-1.2.0.1
