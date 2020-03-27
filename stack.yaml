@@ -1,5 +1,8 @@
 resolver: lts-13.30
 
+ghc-options:
+  cd-blog: -Werror
+
 packages:
 - .
 
