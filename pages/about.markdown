@@ -1,7 +1,9 @@
 ---
 title: About
+date: 2020-03-28
 ---
-<h1>$title$</h1>
+
+Wibble.
 
 Nullam imperdiet sodales orci vitae molestie. Nunc quam orci, pharetra a
 rhoncus vitae, eleifend id felis. Suspendisse potenti. Etiam vitae urna orci.

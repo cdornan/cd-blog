@@ -24,10 +24,11 @@ main = hakyllWith cfg $ do
         route   idRoute
         compile compressCssCompiler
 
-    match (fromList ["about.rst", "contact.markdown"]) $ do
+    match (fromList ["pages/about.markdown"]) $ do
         route   $ setExtension "html"
         compile $ pandocCompiler
-            >>= loadAndApplyTemplate "templates/default.html" defaultContext
+            >>= loadAndApplyTemplate "templates/post.html"    postCtx
+            >>= loadAndApplyTemplate "templates/default.html" postCtx
             >>= relativizeUrls
 
     match "posts/*" $ do
@@ -37,13 +38,13 @@ main = hakyllWith cfg $ do
             >>= loadAndApplyTemplate "templates/default.html" postCtx
             >>= relativizeUrls
 
-    create ["archive.html"] $ do
+    create ["pages/archive.html"] $ do
         route idRoute
         compile $ do
             posts <- recentFirst =<< loadAll "posts/*"
             let archiveCtx =
-                    listField "posts" postCtx (return posts) `mappend`
-                    constField "title" "Archives"            `mappend`
+                    listField "posts" postCtx (return posts) <>
+                    constField "title" "Archives"            <>
                     defaultContext
 
             makeItem ""
@@ -57,8 +58,8 @@ main = hakyllWith cfg $ do
         compile $ do
             posts <- recentFirst =<< loadAll "posts/*"
             let indexCtx =
-                    listField "posts" postCtx (return posts) `mappend`
-                    constField "title" "Home"                `mappend`
+                    listField "posts" postCtx (return posts) <>
+                    constField "title" "Home"                <>
                     defaultContext
 
             getResourceBody
@@ -71,7 +72,7 @@ main = hakyllWith cfg $ do
     create ["atom.xml"] $ do
         route idRoute
         compile $ do
-            let feedCtx = postCtx `mappend`
+            let feedCtx = postCtx <>
                     constField "description" "This is the post description"
 
             posts <- fmap (take 10) . recentFirst =<< loadAll "posts/*"
@@ -80,7 +81,7 @@ main = hakyllWith cfg $ do
     create ["rss.xml"] $ do
         route idRoute
         compile $ do
-            let feedCtx = postCtx `mappend`
+            let feedCtx = postCtx <>
                     constField "description" "This is the post description"
 
             posts <- fmap (take 10) . recentFirst =<< loadAll "posts/*"
