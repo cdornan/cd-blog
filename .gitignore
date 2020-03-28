@@ -3,3 +3,5 @@
 /_site
 .stack-work
 *.yaml.lock
+.DS_Store
+._*

@@ -66,7 +66,7 @@ main = hakyllWith cfg $ do
                 >>= loadAndApplyTemplate "templates/default.html" indexCtx
                 >>= relativizeUrls
 
-    match "templates/*" $ compile templateBodyCompiler
+    match "templates/**" $ compile templateBodyCompiler
 
     create ["atom.xml"] $ do
         route idRoute
