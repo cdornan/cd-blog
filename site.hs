@@ -10,6 +10,10 @@ import           Hakyll.Web.Sass
 main :: IO ()
 main = hakyllWith cfg $ do
 
+    match (fromList ["favicon.ico","apple-touch-icon.png"]) $ do
+        route   idRoute
+        compile copyFileCompiler
+
     match (fromRegex "^assets/scss/[^_].*.scss") $ do
         route $ setExtension "css"
         compile $ fmap compressCss <$> sassCompilerWith sass_options
@@ -22,7 +26,7 @@ main = hakyllWith cfg $ do
         route   idRoute
         compile copyFileCompiler
 
-    match (fromList ["pages/about.markdown"]) $ do
+    match (fromList ["pages/about.md"]) $ do
         route   $ setExtension "html"
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/post.html"    postCtx
@@ -85,6 +89,8 @@ main = hakyllWith cfg $ do
             posts <- fmap (take 10) . recentFirst =<< loadAll "posts/*"
             renderRss feedConfig feedCtx posts
 
+
+--------------------------------------------------------------------------------
 feedConfig :: FeedConfiguration
 feedConfig =
   FeedConfiguration
