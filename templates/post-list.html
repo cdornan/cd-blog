@@ -1,12 +1,10 @@
-<div class='post-list-div'>
-    $for(posts)$
-       <div class='post-list-row'>
-         <div  class='post-list-date'>
-           $date$
-         </div>
-         <div class='post-list-title'>
-           <a href="$url$">$title$</a>
-         </div>
-       </div>
-    $endfor$
-</div>
+<!-- <table class="uk-table uk-table-divider uk-table-striped uk-table-hover uk-table-large"> -->
+<table class="uk-table uk-table-divider uk-table-large">
+    <tbody>
+        $for(posts)$
+            <tr class="uk-text-large">
+                <td style="width:8em;">$date$</td><td><a href="$url$">$title$</a></td>
+            </tr>
+        $endfor$
+    </tbody>
+</table>

@@ -2,3 +2,6 @@
 /_cache
 /_site
 .stack-work
+*.yaml.lock
+.DS_Store
+._*
