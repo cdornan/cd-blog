@@ -41,7 +41,7 @@ main = hakyllWith cfg $ do
     create ["pages/archive.html"] $ do
         route idRoute
         compile $ do
-            posts <- recentFirst =<< loadAll "posts/*"
+            posts <- chronological =<< loadAll "posts/*"
             let archiveCtx =
                     listField "posts" postCtx (return posts) <>
                     constField "title" "Archives"            <>
