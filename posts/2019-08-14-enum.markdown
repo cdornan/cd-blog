@@ -1,5 +1,6 @@
 ---
 title: Enumerating Blessings
+issue: 4
 ---
 
 Fusce tortor quam, egestas in posuere quis, porttitor vel turpis. Donec

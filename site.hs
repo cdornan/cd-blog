@@ -9,20 +9,18 @@ import           Hakyll.Web.Sass
 
 main :: IO ()
 main = hakyllWith cfg $ do
-    -- compile SASS/CSS
-    depends <- makePatternDependency "assets/scss/**.scss"
-    rulesExtraDependencies [depends] $ do
-        match (fromRegex "^assets/scss/[^_].*.scss") $ do
-            route $ setExtension "css"
-            compile $ sassCompilerWith sass_options
 
-    match "assets/images/*" $ do
-        route   idRoute
-        compile copyFileCompiler
+    match (fromRegex "^assets/scss/[^_].*.scss") $ do
+        route $ setExtension "css"
+        compile $ fmap compressCss <$> sassCompilerWith sass_options
 
     match "assets/css/*" $ do
         route   idRoute
         compile compressCssCompiler
+
+    match "assets/images/*" $ do
+        route   idRoute
+        compile copyFileCompiler
 
     match (fromList ["pages/about.markdown"]) $ do
         route   $ setExtension "html"

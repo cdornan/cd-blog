@@ -1,5 +1,6 @@
 ---
 title: Talking Text
+issue: 3
 ---
 
 Vestibulum leo turpis, dignissim quis ultrices sit amet, iaculis ac ligula.

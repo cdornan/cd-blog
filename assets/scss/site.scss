@@ -20,6 +20,10 @@
 
 @import url("https://fonts.googleapis.com/css?family=Merriweather+Sans:400,400i,700,700i|Fira+Code:400,500,700&display=swap");
 
+// body {
+//   max-width: 960px;
+// }
+
 // from blog.ysndr.de
 div.sourceCode {
   overflow: auto;
@@ -27,4 +31,12 @@ div.sourceCode {
   border: none;
   border-left: 4px solid $global-primary-background;
   margin-left: -4px;
+}
+
+.cd-running-font {
+  font-size: 16pt;
+}
+
+.cd-article-container {
+  max-width: 720px;
 }
