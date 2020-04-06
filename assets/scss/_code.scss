@@ -1,3 +1,21 @@
+
+// from blog.ysndr.de
+div.sourceCode {
+  overflow: auto;
+  background-color: $global-muted-background;
+  border: none;
+  border-left: 4px solid $global-primary-background;
+  margin-left: -4px;
+}
+
+
+pre, code {
+  padding: 0.2em 0.4em;
+  background-color: $global-muted-background;
+  border-radius: 3px;
+  font-size: 85%
+}
+
 a.sourceLine { display: inline-block; line-height: 1.25; }
 a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
 a.sourceLine:empty { height: 1.2em; }

@@ -1,1 +1,3 @@
-// hooks here
+@mixin hook-base-code() {
+  font-size: $cd-running-font-size;
+}

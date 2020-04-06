@@ -3,37 +3,20 @@
 // 1. Your custom variables and variable overwrites.
 
 @import "variables.scss";
+$cd-running-font-size:      16pt;
 
 // 2. Import default variables and available mixins.
 @import "uikit/scss/variables-theme.scss";
 @import "uikit/scss/mixins-theme.scss";
 
 // 3. Your custom mixin overwrites.
-$cd-running-font-size: 16pt;
-@mixin hook-base-code() {
-  font-size: $cd-running-font-size;
-}
-
 @import "hooks";
 
 // 4. Import UIkit.
 @import "uikit/scss/uikit-theme.scss";
 
+// 5. cd-blog
+@import "nav.scss";
 @import "code.scss";
-
-// from blog.ysndr.de
-div.sourceCode {
-  overflow: auto;
-  background-color: $global-muted-background;
-  border: none;
-  border-left: 4px solid $global-primary-background;
-  margin-left: -4px;
-}
-
-.cd-running-font {
-  font-size: $cd-running-font-size;
-}
-
-.cd-article-container {
-  max-width: 720px;
-}
+@import "base.scss";
+@import "series.scss";

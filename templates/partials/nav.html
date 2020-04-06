@@ -1,16 +1,32 @@
 <header class="uk-section-secondary" uk-sticky>
-        <nav class="uk-navbar" style="display: flex; justify-content: space-between;">
+
+    <nav class="uk-navbar" uk-navbar style="display: flex; justify-content: space-between;">
+        <ul class="uk-navbar-nav">
+            <li><a href="/"><span uk-icon="home"/>&nbsp;Chris Dornan</a></li>
+        </ul>
+        <div class="uk-navbar-flip">
             <ul class="uk-navbar-nav">
-                <li><a href="/"><span uk-icon="home"/>&nbsp;Chris Dornan</a></li>
+                <li><a href="/pages/about.html"><span uk-icon="info"/>&nbsp;About</a></li>
+                <li>
+                    <a href="#"><span uk-icon="menu"/>Series</a>
+                    <div class="uk-navbar-dropdown">
+                        <ul class="uk-nav uk-navbar-dropdown-nav">
+                            <li><a class="cd-nav-dropdown-a" href="/pages/extension-reviews.html">Extension Reviews</a></li>
+                        </ul>
+                        <ul class="uk-nav uk-navbar-dropdown-nav">
+                            <li><a class="cd-nav-dropdown-a" href="/pages/package-reviews.html">Package Reviews</a></li>
+                        </ul>
+                        <ul class="uk-nav uk-navbar-dropdown-nav">
+                            <li><a class="cd-nav-dropdown-a" href="/pages/structure-reviews.html">Structure Reviews</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="/pages/archive.html"><span uk-icon="database"/>&nbsp;Archives</a></li>
+                <li><a href="/rss.xml"   ><span uk-icon="rss" />&nbsp;RSS</a></li>
+                <li><a href="/atom.xml"  ><span uk-icon="rss" />&nbsp;Atom</a></li>
             </ul>
-            <div class="uk-navbar-flip">
-                <ul class="uk-navbar-nav">
-                    <li><a href="/pages/about.html"><span uk-icon="info"/>&nbsp;About</a></li>
-                    <li><a href="/pages/archive.html"><span uk-icon="database"/>&nbsp;Archives</a></li>
-                    <li><a href="/rss.xml"   ><span uk-icon="rss" />&nbsp;RSS </a></li>
-                    <li><a href="/atom.xml"  ><span uk-icon="rss" />&nbsp;Atom</a></li>
-                </ul>
-            </div>
-        </nav>
+        </div>
+    </nav>
+
 </header>
 <div class="uk-margin"/>

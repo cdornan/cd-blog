@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: d17afa4f69ab3e04f2210f97d0ea26ed6d48900326e410f954ad0b8381dd54c3
+-- hash: 8ba0fea325dc58569df8fb261586f659b0eb7d3123f1b1c749d2dcc6e486d625
 
 name:           cd-blog
 version:        0.1.0.0
@@ -23,16 +23,65 @@ source-repository head
   type: git
   location: https://github.com/cdornan/cd-blog
 
-executable cd-blog
-  main-is: site.hs
+library
+  exposed-modules:
+      CDBlog
+      CDBlog.Kit.Stars
+      CDBlog.Review
+      CDBlog.Types
+      CDBlog.Types.Basic
+      CDBlog.Types.ExtensionReviews
+      CDBlog.Types.IsSeries
+      CDBlog.Types.PackageReviews
+      CDBlog.Types.Stars
+      CDBlog.Types.StructureReviews
   other-modules:
       Paths_cd_blog
-  ghc-options: -Wall -fwarn-tabs -threaded
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -fwarn-tabs
   build-depends:
-      base ==4.*
+      array
+    , base ==4.*
+    , containers
     , data-default
+    , enum-text
+    , filepath
+    , fmt
     , hakyll
     , hakyll-images
     , hakyll-sass
+    , hashable
+    , heredoc
     , hsass
+    , text
+    , time
+    , unordered-containers
+  default-language: Haskell2010
+
+executable cd-blog
+  main-is: cd-blog.hs
+  other-modules:
+      Paths_cd_blog
+  hs-source-dirs:
+      app
+  ghc-options: -Wall -fwarn-tabs -threaded
+  build-depends:
+      array
+    , base ==4.*
+    , cd-blog
+    , containers
+    , data-default
+    , enum-text
+    , filepath
+    , fmt
+    , hakyll
+    , hakyll-images
+    , hakyll-sass
+    , hashable
+    , heredoc
+    , hsass
+    , text
+    , time
+    , unordered-containers
   default-language: Haskell2010

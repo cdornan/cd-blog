@@ -1,13 +1,15 @@
-resolver: lts-13.30
+resolver: lts-14.27
 
 ghc-options:
   cd-blog: -Werror
+
+allow-newer: true
 
 packages:
 - .
 
 extra-deps:
-- pandoc-2.7
+- pandoc-2.7.3
 - pandoc-citeproc-0.16.2
 - ipynb-0.1
 - hakyll-4.12.5.2

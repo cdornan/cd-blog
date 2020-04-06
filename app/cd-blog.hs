@@ -2,6 +2,7 @@
 
 module Main(main) where
 
+import           CDBlog
 import           Data.Default
 import           Hakyll
 import           Hakyll.Web.Sass
@@ -40,33 +41,74 @@ main = hakyllWith cfg $ do
             >>= loadAndApplyTemplate "templates/default.html" postCtx
             >>= relativizeUrls
 
+    create ["pages/extension-reviews.html"] $ do
+        route     idRoute
+        compile $ do
+          let ctx = mconcat
+                [ constField "title"                  "Language Extension Reviews"
+                , field      "extension-review-list"  extensionReviewList
+                , defaultContext
+                ]
+          makeItem ""
+              >>= loadAndApplyTemplate "templates/extension-reviews.html" ctx
+              >>= loadAndApplyTemplate "templates/default.html"           ctx
+              >>= relativizeUrls
+
+    create ["pages/package-reviews.html"] $ do
+        route     idRoute
+        compile $ do
+          let ctx = mconcat
+                [ constField "title"                "Package Reviews"
+                , field      "package-review-list"  packageReviewList
+                , defaultContext
+                ]
+          makeItem ""
+              >>= loadAndApplyTemplate "templates/package-reviews.html" ctx
+              >>= loadAndApplyTemplate "templates/default.html"         ctx
+              >>= relativizeUrls
+
+    create ["pages/structure-reviews.html"] $ do
+        route     idRoute
+        compile $ do
+          let ctx = mconcat
+                [ constField "title"                  "Structure Reviews"
+                , field      "structure-review-list"  structureReviewList
+                , defaultContext
+                ]
+          makeItem ""
+              >>= loadAndApplyTemplate "templates/structure-reviews.html" ctx
+              >>= loadAndApplyTemplate "templates/default.html"         ctx
+              >>= relativizeUrls
+
     create ["pages/archive.html"] $ do
         route idRoute
         compile $ do
             posts <- chronological =<< loadAll "posts/*"
-            let archiveCtx =
-                    listField "posts" postCtx (return posts) <>
-                    constField "title" "Archives"            <>
-                    defaultContext
-
+            let ctx = mconcat
+                  [ listField  "posts" postCtx $ pure posts
+                  , constField "title" "Archives"
+                  , defaultContext
+                  ]
             makeItem ""
-                >>= loadAndApplyTemplate "templates/archive.html" archiveCtx
-                >>= loadAndApplyTemplate "templates/default.html" archiveCtx
+                >>= loadAndApplyTemplate "templates/archive.html" ctx
+                >>= loadAndApplyTemplate "templates/default.html" ctx
                 >>= relativizeUrls
 
-
-    match "index.html" $ do
+    create ["index.html"] $ do
         route idRoute
         compile $ do
             posts <- recentFirst =<< loadAll "posts/*"
-            let indexCtx =
-                    listField "posts" postCtx (return posts) <>
-                    constField "title" "Home"                <>
-                    defaultContext
-
-            getResourceBody
-                >>= applyAsTemplate indexCtx
-                >>= loadAndApplyTemplate "templates/default.html" indexCtx
+            let ctx = mconcat
+                  [ listField   "posts" postCtx (return posts)
+                  , constField  "title"   "Home"
+                  , constField  "heading" "Posts"
+                  , defaultContext
+                  ]
+            -- getResourceBody
+                -- >>= applyAsTemplate ctx
+            makeItem ""
+                >>= loadAndApplyTemplate "templates/archive.html" ctx
+                >>= loadAndApplyTemplate "templates/default.html" ctx
                 >>= relativizeUrls
 
     match "templates/**" $ compile templateBodyCompiler
@@ -114,7 +156,8 @@ sass_options = defaultSassOptions
 --------------------------------------------------------------------------------
 postCtx :: Context String
 postCtx = mconcat
-    [ dateField "date" "%F"
+    [ field     "capsule"     encapsulate
+    , dateField "date"        "%F"
     , defaultContext
     ]
 

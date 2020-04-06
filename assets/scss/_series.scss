@@ -1,0 +1,80 @@
+// Extension Reviews
+
+.cd-er-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 0 0;
+  padding: 0;
+}
+
+.cd-er-name, .cd-er-vrsn, .cd-er-date, .cd-er-home, .cd-er-issu, .cd-er-strs {
+  box-sizing: border-box;
+  padding: 0.8em 0.4em;
+  list-style: none;
+  // border: solid 1px black;
+  > h1, > h2, > h3, > h4, > h5, > h6 { margin: 0; }
+}
+
+.cd-er-name { flex: 1 0 auto; width: 20%; }
+// .cd-er-vrsn { flex: 0 1 auto; }
+.cd-er-date { flex: 0 0 auto; }
+.cd-er-home { flex: 0 0 auto; }
+.cd-er-strs { flex: 0 0 auto; }
+
+a.cd-er-block-link:hover {
+  text-decoration: none;
+}
+
+
+// Package Reviews
+
+.cd-pr-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 0 0;
+  padding: 0;
+}
+
+.cd-pr-name, .cd-pr-vrsn, .cd-pr-date, .cd-pr-home, .cd-pr-issu, .cd-pr-strs {
+  box-sizing: border-box;
+  padding: 0.8em 0.4em;
+  list-style: none;
+  > h1, > h2, > h3, > h4, > h5, > h6 { margin: 0; }
+}
+
+.cd-pr-name { flex: 1 0 auto; width: 20%; }
+.cd-pr-vrsn { flex: 0 1 auto; }
+.cd-pr-date { flex: 0 0 auto; }
+.cd-pr-home { flex: 0 0 auto; }
+.cd-pr-issu { flex: 0 0 auto; }
+.cd-pr-strs { flex: 0 0 auto; }
+
+a.cd-pr-block-link:hover {
+  text-decoration: none;
+}
+
+
+// Structure Reviews
+
+.cd-sr-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 0 0;
+  padding: 0;
+}
+
+.cd-sr-name, .cd-sr-vrsn, .cd-sr-date, .cd-sr-home, .cd-sr-issu, .cd-sr-strs {
+  box-sizing: border-box;
+  padding: 0.8em 0.4em;
+  list-style: none;
+  > h1, > h2, > h3, > h4, > h5, > h6 { margin: 0; }
+}
+
+.cd-sr-name { flex: 1 0 auto; width: 20%; }
+.cd-sr-date { flex: 0 0 auto; }
+.cd-sr-home { flex: 0 0 auto; }
+.cd-sr-strs { flex: 0 0 auto; }
+
+a.cd-sr-block-link:hover {
+  text-decoration: none;
+}

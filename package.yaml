@@ -13,19 +13,34 @@ description:         chrisdornan.com Hakyll blog
 
 dependencies:
 - base == 4.*
+- array
+- containers
+- data-default
+- enum-text
+- filepath
+- fmt
 - hakyll
 - hakyll-images
 - hakyll-sass
+- heredoc
 - hsass
-- data-default
+- hashable
+- text
+- time
+- unordered-containers
 
 ghc-options:
 - -Wall
 - -fwarn-tabs
 
+library:
+  source-dirs: src
+
 executables:
-   cd-blog:
-    main: site.hs
+  cd-blog:
+    main:          cd-blog.hs
+    source-dirs:   app
     ghc-options:
     - -threaded
-    dependencies: []
+    dependencies:
+    - cd-blog
