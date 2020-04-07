@@ -8,12 +8,15 @@ div.sourceCode {
   margin-left: -4px;
 }
 
+pre {
+  background-color: $global-muted-background;
+  font-size: 100%;
+}
 
-pre, code {
-  padding: 0.2em 0.4em;
+code {
   background-color: $global-muted-background;
   border-radius: 3px;
-  font-size: 85%
+  color: #669 !important;
 }
 
 a.sourceLine { display: inline-block; line-height: 1.25; }
