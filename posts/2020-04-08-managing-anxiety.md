@@ -4,7 +4,8 @@ issue: 12
 ---
 
 [I said I would for time to time use this blog for non-Haskell topics and this
-article is the first such article.]
+article is the first such article. Article edited on 2020-04-08 to add 'avoid
+anger' to the recommendations.]
 
 While listening to today's _Today In Focus_ podcast about the [UK Prime
 Minister's admission to Intensive
@@ -93,6 +94,9 @@ considered by some as the ultimate antidote.
 and healthy. Such appreciation is a really good development of this crisis and,
 where true, cannot be commended enough.
 
-6. If you can try to develop a [meditation
+6. Avoid anger, including towards those not adhering to the lockdown in ways
+that you think they should. It simply cuts against points 1 and 7.
+
+7. If you can try to develop a [meditation
 practice](https://www.youtube.com/watch?v=XHvtIcaD194). (Sorry, you will have to
 seek out a source of instruction that suits you.)
