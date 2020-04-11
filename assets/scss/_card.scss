@@ -1,0 +1,18 @@
+.cd-card-title {
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.cd-card {
+  margin: 0% 10%;
+  padding: 1em 1em 0.4em 1em;
+  border: 3px solid #000;
+  background-color: #222222;
+  color: #fff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  position: relative;
+  box-sizing: border-box;
+  transition: box-shadow 0.1s ease-in-out;
+}

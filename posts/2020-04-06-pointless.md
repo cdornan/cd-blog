@@ -1,5 +1,6 @@
 ---
 title: Pointless Style
+subtl: Point-free considered useful
 issue: 11
 ---
 

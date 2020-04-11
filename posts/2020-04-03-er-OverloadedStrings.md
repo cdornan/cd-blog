@@ -1,5 +1,6 @@
 ---
 title: OverloadedStrings
+subtl: The most important extension
 issue: 8
 ---
 

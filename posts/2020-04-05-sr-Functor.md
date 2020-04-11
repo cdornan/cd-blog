@@ -1,5 +1,6 @@
 ---
 title: Functor
+subtl: The basis of things to come
 issue: 10
 ---
 

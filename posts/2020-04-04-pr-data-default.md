@@ -1,5 +1,6 @@
 ---
 title: data-default
+subtl: A brilliant little package
 issue: 9
 ---
 

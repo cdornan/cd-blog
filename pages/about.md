@@ -1,5 +1,6 @@
 ---
 title: About
+subtl: This blog is mostly about Haskell
 date:  2020-03-29
 issue: 1
 ---

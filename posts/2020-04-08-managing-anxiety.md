@@ -1,5 +1,6 @@
 ---
 title: Managing Anxiety
+subtl: In these difficult time be kind
 issue: 12
 ---
 

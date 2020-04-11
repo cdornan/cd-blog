@@ -16,7 +16,8 @@ $cd-running-font-size:      16pt;
 @import "uikit/scss/uikit-theme.scss";
 
 // 5. cd-blog
-@import "nav.scss";
-@import "code.scss";
 @import "base.scss";
+@import "card.scss";
+@import "code.scss";
+@import "nav.scss";
 @import "series.scss";
