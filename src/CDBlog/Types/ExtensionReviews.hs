@@ -27,6 +27,7 @@ data ExtensionReview =
 
 data ExtensionID
   = EI_OverloadedStrings
+  | EI_RecordWildCards
   deriving (Bounded,Enum,Eq,Ord,Show)
   deriving (Buildable,TextParsable) via UsingEnumText ExtensionID
   deriving (EnumText)
@@ -81,4 +82,11 @@ mk pid = case pid of
       , _er_date    = "2020-04-03"
       , _er_home    = "https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/glasgow_exts.html#overloaded-string-literals"
       , _er_stars   = S_5
+      }
+  EI_RecordWildCards ->
+    ExtensionReview
+      { _er_id      = pid
+      , _er_date    = "2020-04-18"
+      , _er_home    = "https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/glasgow_exts.html#extension-RecordWildCards"
+      , _er_stars   = S_4
       }
