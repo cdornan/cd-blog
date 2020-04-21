@@ -28,6 +28,7 @@ data ExtensionReview =
 data ExtensionID
   = EI_OverloadedStrings
   | EI_RecordWildCards
+  | EI_QuasiQuotes
   deriving (Bounded,Enum,Eq,Ord,Show)
   deriving (Buildable,TextParsable) via UsingEnumText ExtensionID
   deriving (EnumText)
@@ -89,4 +90,11 @@ mk pid = case pid of
       , _er_date    = "2020-04-18"
       , _er_home    = "https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/glasgow_exts.html#extension-RecordWildCards"
       , _er_stars   = S_4
+      }
+  EI_QuasiQuotes ->
+    ExtensionReview
+      { _er_id      = pid
+      , _er_date    = "2020-04-20"
+      , _er_home    = "https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/glasgow_exts.html#template-haskell-quasi-quotation"
+      , _er_stars   = S_5
       }

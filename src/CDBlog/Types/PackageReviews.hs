@@ -29,6 +29,7 @@ data PackageReview =
 
 data PackageID
   = PI_data_default
+  | PI_heredoc
   deriving (Bounded,Enum,Eq,Ord,Show)
   deriving (Buildable,TextParsable) via UsingEnumText PackageID
   deriving (EnumText)
@@ -96,5 +97,14 @@ mk pid = case pid of
       , _pr_date    = "2020-04-04"
       , _pr_home    = "https://github.com/mauke/data-default"
       , _pr_issues  = "https://github.com/mauke/data-default/issues"
+      , _pr_stars   = S_5
+      }
+  PI_heredoc ->
+    PackageReview
+      { _pr_id      = pid
+      , _pr_version = "0.2.0.0"
+      , _pr_date    = "2020-04-21"
+      , _pr_home    = "http://hackage.haskell.org/package/heredoc"
+      , _pr_issues  = "http://hackage.haskell.org/package/heredoc"
       , _pr_stars   = S_5
       }

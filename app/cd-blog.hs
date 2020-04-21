@@ -45,7 +45,7 @@ main = hakyllWith cfg $ do
         route     idRoute
         compile $ do
           let ctx = mconcat
-                [ constField "title"                  "Language Extension Reviews"
+                [ constField "title"               "Language Extension Reviews"
                 , field      "extension-review-list"  extensionReviewList
                 , defaultContext
                 ]
@@ -104,8 +104,6 @@ main = hakyllWith cfg $ do
                   , constField  "heading" "Posts"
                   , defaultContext
                   ]
-            -- getResourceBody
-                -- >>= applyAsTemplate ctx
             makeItem ""
                 >>= loadAndApplyTemplate "templates/archive.html" ctx
                 >>= loadAndApplyTemplate "templates/default.html" ctx

@@ -53,3 +53,7 @@ are. But I will tell you what, they are just way too useful to allow such
 scruples get in the way of their use. My advice to anyone avoiding them is to
 park your scruples, bite down and give them a try. You might find them just too
 useful.
+
+(I only consider `RecordWildCards` used in patterns here &mdash; see [Dmitrii
+Kovanikov's blog post](https://kodimensional.dev/recordwildcards) for a
+discussion that includes their use to construct records in expressions.)

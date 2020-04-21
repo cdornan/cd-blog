@@ -19,6 +19,10 @@ code {
   color: #669 !important;
 }
 
+div.condensedCode div.sourceCode code.sourceCode {
+  font-size: 75%;
+}
+
 a.sourceLine { display: inline-block; line-height: 1.25; }
 a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
 a.sourceLine:empty { height: 1.2em; }
