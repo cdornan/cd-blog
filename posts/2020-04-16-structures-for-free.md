@@ -74,7 +74,7 @@ Lisp, though of course that would be the case, but implicitly.
 The Haskell _base_ package, maintained and developed since its origins in the
 original Haskell Prelude to better reflect those mathematical structures, [even
 at the cost of breakage borne by the whole
-community](/posts/2020-04-13/vitality.html), integrates these beautiful
+community](/posts/2020-04-13-vitality.html), integrates these beautiful
 mathematical structures into the fabric of Haskell so Haskellers can use them
 naturally without even being much aware of the toolset that has been assembled
 for their use, as [the
