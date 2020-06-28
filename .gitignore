@@ -1,6 +1,7 @@
 /tmp
 /_cache
 /_site
+/build
 .stack-work
 *.yaml.lock
 .DS_Store
