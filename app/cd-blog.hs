@@ -27,7 +27,7 @@ main = hakyllWith cfg $ do
         route   idRoute
         compile copyFileCompiler
 
-    match (fromList ["pages/about.md"]) $ do
+    match (fromList ["404.md","pages/about.md"]) $ do
         route   $ setExtension "html"
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/post.html"    postCtx

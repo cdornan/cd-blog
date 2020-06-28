@@ -1,0 +1,6 @@
+/assets/*       linguist-vendored
+/pages/*        linguist-vendored
+/posts/*        linguist-vendored
+/templates/*    linguist-vendored
+/uikit/*        linguist-vendored
+/uikit-3.3.7/*  linguist-vendored
