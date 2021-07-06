@@ -2,6 +2,7 @@ resolver: lts-14.27
 
 ghc-options:
   cd-blog: -Werror
+  pandoc: -j
 
 allow-newer: true
 
